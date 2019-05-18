@@ -1,0 +1,16 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: User
+  datasource:
+    url: jdbc:mysql://localhost:3306/ego?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+mybatis:
+  configuration:
+    cache-enabled: false
+    log-impl:
+      org.apache.ibatis.logging.stdout.StdOutImpl
+
