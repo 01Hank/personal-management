@@ -1,12 +1,10 @@
 package com.pm.Service;
 
-import com.pm.Pojo.User;
 
-
-import java.util.List;
-
+import com.pm.Pojo.teacherUser;
 
 public interface UserService {
 
-    List<User> selectUser();
+    teacherUser selectUserByName(String name);
+
 }

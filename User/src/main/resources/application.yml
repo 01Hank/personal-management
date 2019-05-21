@@ -2,9 +2,9 @@ server:
   port: 8091
 spring:
   application:
-    name: User
+    name: teacherUser
   datasource:
-    url: jdbc:mysql://localhost:3306/ego?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/managementSys?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
