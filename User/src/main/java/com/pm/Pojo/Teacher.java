@@ -8,13 +8,16 @@ import javax.persistence.Table;
 
 @Table(name = "teacher")
 @Data
-public class teacherUser {
+public class Teacher {
     @Id
     @KeySql(useGeneratedKeys = true)
-    private Long Id;
+    private int Id;
 
     private String name;
 
     private String pwd;
+
+    //标识权限
+    private String radio;
 
 }

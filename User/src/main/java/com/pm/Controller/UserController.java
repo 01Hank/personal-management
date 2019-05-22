@@ -1,21 +1,35 @@
 package com.pm.Controller;
 
-import com.pm.Pojo.teacherUser;
-import com.pm.Service.UserService;
+import com.pm.Pojo.Teacher;
+import com.pm.Service.teacherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/api")
 public class UserController {
     @Autowired
-    private UserService userService;
+    private teacherService userService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/login")
-    public teacherUser selectAll(@RequestParam("name") String name){
+    public Teacher login(@RequestParam("name") String name){
         return  userService.selectUserByName(name);
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/register")
+    public int register(@RequestBody Teacher t){
+        if(t.getRadio().equals("1")){
+            Teacher teacherUser = new Teacher();
+            teacherUser.setName(t.getName());
+            teacherUser.setPwd(t.getPwd());
+            int index = userService.saveUser(teacherUser);
+            return  index;
+        }
+//        if(radio.equals("2")){
+//
+//        }
+        return 0;
     }
 }
