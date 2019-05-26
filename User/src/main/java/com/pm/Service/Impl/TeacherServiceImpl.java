@@ -18,9 +18,7 @@ public class TeacherServiceImpl implements teacherService {
     @Transactional
     @Override
     public Teacher selectUserByName(String name) {
-        Teacher t = new Teacher();
-        t.setName(name);
-        Teacher teacherUser = teacherUserMapper.selectOne(t);
+        Teacher teacherUser = teacherUserMapper.selectUserByName(name);
         return teacherUser;
     }
 
