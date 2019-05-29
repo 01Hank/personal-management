@@ -1,14 +1,13 @@
-package com.pm.Pojo;
+package com.pm.management.Pojo;
 
 import lombok.Data;
 import tk.mybatis.mapper.annotation.KeySql;
-
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name = "student")
 @Data
-public class Student {
+public class student {
     @Id
     @KeySql(useGeneratedKeys = true)
     private int Id;

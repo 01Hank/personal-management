@@ -1,4 +1,4 @@
-package com.pm.Pojo;
+package com.pm.management.Pojo;
 
 import lombok.Data;
 import tk.mybatis.mapper.annotation.KeySql;
@@ -6,9 +6,9 @@ import tk.mybatis.mapper.annotation.KeySql;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "student")
+@Table(name = "teacher")
 @Data
-public class Student {
+public class Teacher {
     @Id
     @KeySql(useGeneratedKeys = true)
     private int Id;
@@ -17,8 +17,7 @@ public class Student {
 
     private String pwd;
 
-    private int tid;
-
     //标识权限
     private String radio;
+
 }
