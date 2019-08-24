@@ -34,9 +34,20 @@ public class UserController {
 
     @PostMapping("/login")
     @CrossOrigin("*")
-    public  String  login(@RequestBody String logins){
+    public  String  login(@RequestBody Login logins){
+        String token = null;
+        try {
+            token = userService.login(logins);
+            return token;
+        } catch (Exception e) {
+            return "1";
+        }
 
-        return  null;
+    }
+
+    @GetMapping("/test")
+    public  String  test(){
+        return "123";
     }
 
 }
