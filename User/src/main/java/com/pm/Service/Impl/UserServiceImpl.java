@@ -5,15 +5,22 @@ import com.pm.Pojo.MaiaUser;
 import com.pm.Pojo.db.Login;
 import com.pm.Pojo.db.Token;
 import com.pm.Service.UserService;
+import com.pm.UserStart;
 import com.pm.Utils.Tokens;
 import com.pm.Utils.UUIDs;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
 
 
+
 @Service
 public class UserServiceImpl implements UserService {
+    private static final Logger logger = LoggerFactory.getLogger(UserStart.class);
+
+
     @Autowired
     private UserMapper  userMapper;
 
@@ -28,8 +35,11 @@ public class UserServiceImpl implements UserService {
         //判断存不存在用户
         try{
             MaiaUser maiaUser = userMapper.selectByEmail(user.getEmail());
+            if(maiaUser==null){
+                userMapper.register(uuid,user.getType(),user.getFirstName(),user.getLastName(),user.getEmail(),user.getPassword(),user.getBirth(),user.getCateory(),user.getVisiable());
+            }
         }catch (Exception e){
-            userMapper.register(uuid,user.getType(),user.getFirstName(),user.getLastName(),user.getEmail(),user.getPassword(),user.getBirth(),user.getCateory(),user.getVisiable());
+            logger.error("注册错误");
         }
 
 

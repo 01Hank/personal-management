@@ -13,6 +13,31 @@
     <artifactId>User</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <!--百度语音识别-->
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>java-sdk</artifactId>
+            <version>4.10.0</version>
+        </dependency>
+
+        <!--mp3转pcm-->
+        <dependency>
+            <groupId>com.googlecode.soundlibs</groupId>
+            <artifactId>mp3spi</artifactId>
+            <version>1.9.5-1</version>
+        </dependency>
+
+        <!--fastJSON-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastJSON</artifactId>
+            <version>1.2.44</version>
+        </dependency>
         <!--web启动器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
