@@ -28,6 +28,7 @@ public class test {
         //获取文件的二进制
         try {
             recognition.mp3Convertpcm(mp3Path,pcmPath);
+            //mp3Topcm.mp3Convertpcm(mp3Path,pcmPath);
             byte[] data = FileUtils.readFileToByteArray(new File(pcmPath)); //readFileByBytes仅为获取二进制数据示例
             String speech = Base64Util.encode(data);
 
